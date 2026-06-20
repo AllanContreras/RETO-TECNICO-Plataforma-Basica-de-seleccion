@@ -1,4 +1,5 @@
 import RegistroPracticante from './components/RegistroPracticante';
+import PanelAnalista from './components/PanelAnalista';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       </section>
 
       <RegistroPracticante />
+
+      <PanelAnalista />
     </main>
   );
 }

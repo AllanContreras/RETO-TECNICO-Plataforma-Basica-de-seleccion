@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const practicanteRoutes = require('./routes/practicanteRoutes');
 
 const app = express();
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/practicantes', practicanteRoutes);
+app.use('/uploads', express.static(path.join(__dirname, '../../uploads')));
 
 app.use((error, req, res, next) => {
   if (error && error.message === 'Solo se permiten archivos PDF') {

@@ -67,6 +67,141 @@ input {
   padding: 1.5rem;
 }
 
+.panel-card {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ghost-button,
+.secondary-button {
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ghost-button {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #334155;
+  cursor: pointer;
+}
+
+.secondary-button {
+  border: 1px solid #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 1rem 0;
+  color: #64748b;
+}
+
+.candidate-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.candidate-card {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.candidate-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.candidate-top h3,
+.candidate-top p {
+  margin: 0;
+}
+
+.candidate-top p {
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.status-pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.status-pill.viable {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-pill.no-viable {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-pill.pendiente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.candidate-info {
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.candidate-info div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.candidate-info dt {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.candidate-info dd {
+  margin: 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.candidate-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.candidate-actions select {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  background: #fff;
+}
+
 .practicante-form {
   display: grid;
   gap: 1rem;
@@ -135,5 +270,14 @@ input {
   .practicante-form .message,
   .practicante-form button {
     grid-column: 1 / -1;
+  }
+
+  .candidate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .candidate-actions {
+    grid-template-columns: 1fr auto;
+    align-items: center;
   }
 }
