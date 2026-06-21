@@ -63,6 +63,16 @@ npm run dev
 4. Verifica que el candidato aparezca en la lista.
 5. Descarga la hoja de vida o cambia el estado a `Viable` o `No viable`.
 
+## Capturas
+- Candidato
+<img width="955" height="461" alt="image" src="https://github.com/user-attachments/assets/4a9eb520-04cb-4320-9539-af350b665c07" />
+
+- Analista
+  
+<img width="839" height="467" alt="image" src="https://github.com/user-attachments/assets/85542b87-353c-424e-a9ab-ddafc2baa490" />
+
+
+
 ## API REST
 
 - `POST /api/practicantes`: registra un candidato.
