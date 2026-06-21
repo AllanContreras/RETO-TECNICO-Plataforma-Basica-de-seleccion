@@ -1,27 +1,79 @@
 # Plataforma Basica de Seleccion de Practicantes
 
-Proyecto web para registrar practicantes y permitir que analistas revisen su informacion y estado de seleccion.
+Aplicacion web para registrar practicantes y permitir que un analista revise los candidatos, descargue su hoja de vida y cambie su estado.
 
-## Estructura inicial
+## Que hace el sistema
 
-- `backend/` para la API con Node.js, Express y MongoDB.
-- `frontend/` para la interfaz con React.
-- `uploads/` para almacenar hojas de vida PDF.
+- Los practicantes se registran en la vista publica `/registro`.
+- Los analistas revisan candidatos en `/admin`.
+- El backend guarda los datos en MongoDB y almacena los PDF en la carpeta `uploads/`.
 
-## Fases de trabajo
+## Tecnologias
 
-1. Estructura inicial y control de versiones.
-2. Backend base y conexion a MongoDB.
-3. Modelo, rutas y controladores.
-4. Frontend de registro.
-5. Panel de analista.
-6. Documentacion y ajuste final.
+- Frontend: React, CSS, Axios, React Router.
+- Backend: Node.js, Express.
+- Base de datos: MongoDB con Mongoose.
+- Archivos: Multer para subir hojas de vida PDF.
 
-## Conexion a MongoDB
+## Estructura del proyecto
 
-1. Crea una base de datos local o en Atlas.
-2. Copia `backend/.env.example` a `backend/.env`.
-3. Ajusta `MONGODB_URI` con tu cadena real de Atlas o local.
-4. Ejecuta el backend desde `backend/` con `npm install` y `npm run dev`.
+- `backend/` contiene la API REST, la conexion a MongoDB y la logica de guardado.
+- `frontend/` contiene las dos vistas separadas por ruta.
+- `uploads/` guarda las hojas de vida PDF subidas.
 
-La coleccion que usa el proyecto es `practicantes` y se crea automaticamente cuando registras el primer candidato.
+## Rutas principales
+
+- `/registro`: formulario publico para candidatos.
+- `/admin`: panel para analistas.
+
+## Variables de entorno
+
+En `backend/.env` debes tener al menos:
+
+```env
+PORT=5000
+MONGODB_URI=tu_cadena_de_mongodb
+```
+
+Si usas Atlas, copia `backend/.env.example` y reemplaza la cadena por la tuya.
+
+## Instalacion y ejecucion
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Como probar el sistema
+
+1. Abre `http://localhost:5173/registro`.
+2. Registra un practicante con un PDF.
+3. Abre `http://localhost:5173/admin`.
+4. Verifica que el candidato aparezca en la lista.
+5. Descarga la hoja de vida o cambia el estado a `Viable` o `No viable`.
+
+## API REST
+
+- `POST /api/practicantes`: registra un candidato.
+- `GET /api/practicantes`: lista todos los candidatos.
+- `PUT /api/practicantes/:id/estado`: cambia el estado del candidato.
+
+## Base de datos
+
+La coleccion usada por el proyecto es `practicantes`.
+En Atlas, los candidatos quedan guardados en la base configurada en `MONGODB_URI`.
+
+## Nota tecnica
+
+Si tu entorno tiene problemas con `mongodb+srv`, puedes usar la URI estandar con los seeds del cluster. En este proyecto funciono mejor que el SRV en algunos equipos por temas de DNS local.
