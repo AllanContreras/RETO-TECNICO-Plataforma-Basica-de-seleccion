@@ -62,6 +62,7 @@ function RegistroPracticante() {
       setFormulario(estadoInicial);
       setArchivo(null);
       evento.target.reset();
+      window.dispatchEvent(new Event('practicante-registrado'));
     } catch (apiError) {
       const respuesta = apiError?.response?.data?.message;
       setError(respuesta || 'No fue posible registrar el practicante');
@@ -72,7 +73,8 @@ function RegistroPracticante() {
 
   return (
     <section className="form-card">
-      <h2>Registro de practicante</h2>
+      <h2>Vista de candidatos</h2>
+      <p className="section-copy">Ruta: /registro</p>
       <form className="practicante-form" onSubmit={manejarEnvio}>
         <label>
           Nombre completo

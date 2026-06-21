@@ -26,6 +26,16 @@ function PanelAnalista() {
 
   useEffect(() => {
     cargarPracticantes();
+
+    const manejarRegistroNuevo = () => {
+      cargarPracticantes();
+    };
+
+    window.addEventListener('practicante-registrado', manejarRegistroNuevo);
+
+    return () => {
+      window.removeEventListener('practicante-registrado', manejarRegistroNuevo);
+    };
   }, []);
 
   const manejarCambioEstado = async (id, estado) => {
@@ -45,7 +55,8 @@ function PanelAnalista() {
       <div className="panel-header">
         <div>
           <p className="eyebrow">Analista de seleccion</p>
-          <h2>Revision de candidatos</h2>
+          <h2>Vista de analistas</h2>
+          <p className="section-copy">Ruta: /admin</p>
         </div>
         <button type="button" className="ghost-button" onClick={cargarPracticantes}>
           Refrescar

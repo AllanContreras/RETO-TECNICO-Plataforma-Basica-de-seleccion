@@ -28,6 +28,42 @@ input {
   padding: 2rem 0 3rem;
 }
 
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.topbar-link {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.7);
+  color: #334155;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.topbar-link.active {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
 .hero-card,
 .form-card {
   background: rgba(255, 255, 255, 0.88);
@@ -40,6 +76,11 @@ input {
 .hero-card {
   padding: 2rem;
   margin-bottom: 1.5rem;
+}
+
+.section-copy {
+  margin: 0.5rem 0 0;
+  color: #64748b;
 }
 
 .eyebrow {
